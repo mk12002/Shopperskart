@@ -10,6 +10,9 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
 import com.shopperskart.inventory_service.service.InventoryService;
+import org.springframework.web.bind.annotation.RequestParam;
+import java.util.List;
+import com.shopperskart.inventory_service.dto.InventoryResponse;
 
 
 @RestController
@@ -20,13 +23,11 @@ public class InventoryController {
 
     private final InventoryService inventoryService;
 
-    @GetMapping("/{sku-code}")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public boolean isInStock(@PathVariable("sku-code") String skuCode) {
+    public List<InventoryResponse> isInStock(@RequestParam List<String> skuCode) {
         // This is a placeholder implementation.
         // In a real application, you would call a service to check the inventory.
         return inventoryService.isInStock(skuCode);
-
-        
     }
 }

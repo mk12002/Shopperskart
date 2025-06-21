@@ -1,7 +1,10 @@
 package com.shopperskart.order_service.service;
 
 import java.util.UUID;
+import java.util.stream.Collectors;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.springframework.stereotype.Service;
 
@@ -11,10 +14,13 @@ import com.shopperskart.order_service.model.OrderLineItems;
 
 import lombok.RequiredArgsConstructor;
 
+import com.shopperskart.order_service.dto.InventoryResponse;
 import com.shopperskart.order_service.dto.OrderLineItemsDto;
 import com.shopperskart.order_service.repository.OrderRepository;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import jakarta.transaction.Transactional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -23,6 +29,7 @@ import jakarta.transaction.Transactional;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+    private final WebClient webClient;
 
     public void placeOrder(OrderRequest orderRequest) {
         // Logic to place the order
@@ -33,11 +40,28 @@ public class OrderService {
 
         List<OrderLineItems> orderLineItems= orderRequest.getOrderLineItemsDtoList().stream()
         .map(this::mapToDto)
-        .toList();
+        .collect(Collectors.toCollection(ArrayList::new));
+        
         
         order.setOrderLineItemsList(orderLineItems); // This should be replaced with actual mapping logic to convert DTOs to entity objects
 
-        orderRepository.save(order); // Save the order to the repository
+        List<String> skuCodes = order.getOrderLineItemsList().stream()
+        .map(OrderLineItems::getSkuCode).toList();
+
+        //call inventory service
+        InventoryResponse[] inventoryResponseArray=webClient.get().uri("http://localhost:8082/api/inventory", uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
+            .retrieve()
+            .bodyToMono(InventoryResponse[].class)
+            .block(); // This is a blocking call, consider using reactive programming for better performance
+
+        boolean allProductsInStock = Arrays.stream(inventoryResponseArray).allMatch(InventoryResponse::isInStock);
+
+        if(allProductsInStock) {
+            orderRepository.save(order); // Save the order to the repository
+        } else {
+            throw new IllegalArgumentException("Product is not in stock");
+        }
+        //orderRepository.save(order); // Save the order to the repository
     }
 
     private OrderLineItems mapToDto(OrderLineItemsDto orderLineItemsDto) {
