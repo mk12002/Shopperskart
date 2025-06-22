@@ -18,6 +18,7 @@ import com.shopperskart.order_service.dto.InventoryResponse;
 import com.shopperskart.order_service.dto.OrderLineItemsDto;
 import com.shopperskart.order_service.repository.OrderRepository;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClient.Builder;
 
 import jakarta.transaction.Transactional;
 
@@ -29,7 +30,7 @@ import jakarta.transaction.Transactional;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     public void placeOrder(OrderRequest orderRequest) {
         // Logic to place the order
@@ -49,7 +50,7 @@ public class OrderService {
         .map(OrderLineItems::getSkuCode).toList();
 
         //call inventory service
-        InventoryResponse[] inventoryResponseArray=webClient.get().uri("http://localhost:8082/api/inventory", uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
+        InventoryResponse[] inventoryResponseArray=webClientBuilder.build().get().uri("http://inventory-service/api/inventory", uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
             .retrieve()
             .bodyToMono(InventoryResponse[].class)
             .block(); // This is a blocking call, consider using reactive programming for better performance

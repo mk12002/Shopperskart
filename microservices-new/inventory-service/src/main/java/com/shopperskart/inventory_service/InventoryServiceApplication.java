@@ -6,7 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import com.shopperskart.inventory_service.model.Inventory;
 import com.shopperskart.inventory_service.repository.InventoryRepository;
+//import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
 @SpringBootApplication
+//@EnableEurekaClient
+
 public class InventoryServiceApplication {
 
 	public static void main(String[] args) {

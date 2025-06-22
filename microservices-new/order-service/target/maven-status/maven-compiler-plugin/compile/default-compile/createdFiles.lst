@@ -1,7 +1,10 @@
 com\shopperskart\order_service\OrderServiceApplication.class
+com\shopperskart\order_service\dto\InventoryResponse.class
 com\shopperskart\order_service\dto\OrderRequest.class
+com\shopperskart\order_service\config\WebClientConfig.class
 com\shopperskart\order_service\model\OrderLineItems.class
 com\shopperskart\order_service\controller\OrderController.class
+com\shopperskart\order_service\dto\InventoryResponse$InventoryResponseBuilder.class
 com\shopperskart\order_service\service\OrderService.class
 com\shopperskart\order_service\dto\OrderLineItemsDto.class
 com\shopperskart\order_service\model\Order.class

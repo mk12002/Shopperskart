@@ -1,4 +1,6 @@
+D:\Code_stuff\Shopperskart\microservices-new\order-service\src\main\java\com\shopperskart\order_service\config\WebClientConfig.java
 D:\Code_stuff\Shopperskart\microservices-new\order-service\src\main\java\com\shopperskart\order_service\controller\OrderController.java
+D:\Code_stuff\Shopperskart\microservices-new\order-service\src\main\java\com\shopperskart\order_service\dto\InventoryResponse.java
 D:\Code_stuff\Shopperskart\microservices-new\order-service\src\main\java\com\shopperskart\order_service\dto\OrderLineItemsDto.java
 D:\Code_stuff\Shopperskart\microservices-new\order-service\src\main\java\com\shopperskart\order_service\dto\OrderRequest.java
 D:\Code_stuff\Shopperskart\microservices-new\order-service\src\main\java\com\shopperskart\order_service\model\Order.java
