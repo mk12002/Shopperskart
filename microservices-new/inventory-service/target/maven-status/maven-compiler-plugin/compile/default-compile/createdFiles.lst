@@ -1,4 +1,5 @@
 com\shopperskart\inventory_service\dto\InventoryResponse$InventoryResponseBuilder.class
+com\shopperskart\inventory_service\util\DataLoader.class
 com\shopperskart\inventory_service\model\Inventory.class
 com\shopperskart\inventory_service\controller\InventoryController.class
 com\shopperskart\inventory_service\dto\InventoryResponse.class

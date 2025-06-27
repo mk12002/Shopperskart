@@ -1,7 +1,8 @@
-D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\controller\ProductController.java
-D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\dto\ProductRequest.java
 D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\dto\ProductResponse.java
-D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\model\Product.java
-D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\ProductServiceApplication.java
+D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\util\DataLoader.java
+D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\dto\ProductRequest.java
 D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\repository\ProductRepository.java
+D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\controller\ProductController.java
 D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\service\ProductService.java
+D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\ProductServiceApplication.java
+D:\Code_stuff\Shopperskart\microservices-new\product-service\src\main\java\com\shopperskart\product_service\model\Product.java

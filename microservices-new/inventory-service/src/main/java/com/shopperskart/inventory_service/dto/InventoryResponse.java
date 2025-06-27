@@ -14,5 +14,4 @@ public class InventoryResponse {
     private String skuCode;
     private boolean isInStock;
 
-    // You can add other fields if necessary, such as quantity, warehouse location, etc.
 }

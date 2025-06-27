@@ -1,10 +1,11 @@
 com\shopperskart\product_service\dto\ProductRequest.class
+com\shopperskart\product_service\dto\ProductRequest$ProductRequestBuilder.class
+com\shopperskart\product_service\model\Product.class
+com\shopperskart\product_service\dto\ProductResponse.class
 com\shopperskart\product_service\dto\ProductResponse$ProductResponseBuilder.class
 com\shopperskart\product_service\model\Product$ProductBuilder.class
 com\shopperskart\product_service\controller\ProductController.class
+com\shopperskart\product_service\util\DataLoader.class
 com\shopperskart\product_service\repository\ProductRepository.class
 com\shopperskart\product_service\service\ProductService.class
-com\shopperskart\product_service\dto\ProductRequest$ProductRequestBuilder.class
-com\shopperskart\product_service\model\Product.class
 com\shopperskart\product_service\ProductServiceApplication.class
-com\shopperskart\product_service\dto\ProductResponse.class

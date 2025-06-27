@@ -1,0 +1,17 @@
+# Ignore database volumes
+microservices-new/mongo-data/
+microservices-new/mysql_keycloak_data/
+microservices-new/postgres-order/
+microservices-new/postgres-inventory/
+
+# Ignore target folders from Maven
+**/target/
+
+# Ignore IDE files
+*.iml
+.idea/
+.vscode/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
